@@ -1,0 +1,20 @@
+/* Simple Global RESET*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  //defines what one rem should be 100/16 => 10px
+  font-size: 62.5%;
+}
+
+
+/* Setting up fonts*/
+body{
+
+  box-sizing: border-box;
+}
