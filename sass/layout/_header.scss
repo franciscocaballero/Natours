@@ -10,6 +10,7 @@
   background-position: top;
   //Insures image postion remains on top when resized*/
   //Clips image depending on x y location*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box{
