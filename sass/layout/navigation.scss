@@ -14,6 +14,8 @@
   right: 6rem;
   z-index: 200;
   box-shadow: 0 1rem 3rem rgba($color-black, .1);
+  text-align: center;
+  cursor: pointer;
   }
 
   &__background{
@@ -23,7 +25,7 @@
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
-    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    background-image: radial-gradient($color-primary, $color-primary-dark);
     z-index: 100;
     transition: all .8s;
     //transform: scale(80);
@@ -85,6 +87,7 @@
     }
   }
 
+  //Functionality
   //check box hack
 
   &__checkbox:checked ~ &__background {
@@ -93,5 +96,51 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+  }
+
+  //Icon
+  &__icon{
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height:  2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+      transition: all .2s;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before{ top: -.8rem; }
+    &::after{ top: .8rem; }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    //^ once check box is checked select the button then the sibling of button which is the icon
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+    //^ place in center then rotate
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
   }
 }
