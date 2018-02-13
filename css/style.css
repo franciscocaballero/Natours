@@ -1,3 +1,18 @@
+/*
+
+0- 600px; PHONE
+600 - 900px TABELT PORTRAIT
+900 -1200px TALBET LANDSCAPE
+1200 -1800 is wher eour normal style apply
+1800px + BIG DESKTOP
+
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+//1em = 16px em 600px/16
+*/
 /*COLORS*/
 /* Simple Global RESET*/
 *,
@@ -9,6 +24,18 @@
 
 html {
   font-size: 62.5%; }
+
+@media (tab-land) and (max-width: 75em) {
+  html {
+    font-size: 56.25%; } }
+
+@media (tab-port) and (max-width: 56.25em) {
+  html {
+    font-size: 50%; } }
+
+@media (big-desktop) and (min-width: 112.5em) {
+  html {
+    font-size: 75%; } }
 
 /* Setting up fonts*/
 body {
