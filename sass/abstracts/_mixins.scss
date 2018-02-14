@@ -30,13 +30,12 @@ $breakpoint argument choices:
 -tab-port
 -tab-land
 -big-desktop
+
+ORDER: base + typography > general layout + grid > pagelayout > components
 //1em = 16px em 600px/16
 */
 
-
-
-@mixin respond ($breakpoint){
-  @media ($breakpoint){
+@mixin respond($breakpoint){
     @if $breakpoint == phone {
       @media (max-width: 37.5em){ @content }; // 600px
       //^content directive allows us to add chuck of code into mixin
@@ -55,4 +54,3 @@ $breakpoint argument choices:
 
     }
   }
-}
