@@ -6,8 +6,20 @@
   &:not(:last-child){
     margin-bottom: $gutter-vertical;
     //'&not add margin-bottom expect the last-child
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
   @include clearfix;
+
+
+
 
   [class^='col-'] {
     // Really love this line of code
@@ -16,7 +28,14 @@
     &:not(:last-child){
       margin-right: $gutter-horizontal;
       //'&not add margin-right expect the last-child
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
 
+    }
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
   .col-1-of-2 {
