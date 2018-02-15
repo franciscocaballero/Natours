@@ -18,9 +18,9 @@
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 95%);
     height: 95vh;
   }
-  @media (min-resolution: 192dpi) and(min-with: 37.5em),
-     (-webkit-min-device-pixel-ratio: 2) and(min-with: 37.5em),
-  (min-with: 125em){
+  @media only screen and(min-resolution: 192dpi) and(min-with: 37.5em),
+     only screen and(-webkit-min-device-pixel-ratio: 2) and(min-with: 37.5em),
+  only screen and(min-with: 125em){
     //^targets high res sreens and adding multiple condtions to querey
     background-image: linear-gradient(
       to right bottom,
